@@ -7,7 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 public class SwagLabLoginPage {
 		
-	@FindBy (xpath ="//input[@id='user-name1']")private WebElement username;
+	@FindBy (xpath ="//input[@id='user-name']")private WebElement username;
 	@FindBy (xpath ="//input[@id='password']")private WebElement password;
 	@FindBy (xpath ="//input[@id='login-button']")private WebElement login;
 	@FindBy (xpath ="//h3[@data-test='error']")private WebElement errorMsg;

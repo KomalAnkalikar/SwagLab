@@ -54,7 +54,7 @@ public class SwagLabLoginPageTest extends SwagPageElements{
 		
 	}
 	
-	  @AfterMethod
+	@AfterMethod
 	  public void captureResults(ITestResult result)
 		{
 			if(result.getStatus() == ITestResult.SUCCESS)
