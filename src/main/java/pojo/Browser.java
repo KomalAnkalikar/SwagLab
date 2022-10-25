@@ -1,5 +1,7 @@
 package pojo;
 
+import java.util.concurrent.TimeUnit;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -12,6 +14,7 @@ public class Browser {
 			WebDriver driver = new ChromeDriver();
 			driver.navigate().to("https://www.saucedemo.com/");
 			driver.manage().window().maximize();
+			driver.manage().timeouts().implicitlyWait(20,TimeUnit.SECONDS);
 			return driver;
 		}
 }

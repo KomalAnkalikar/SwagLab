@@ -3,11 +3,13 @@ package test;
 import java.io.IOException;
 
 import org.apache.poi.EncryptedDocumentException;
+import org.testng.Assert;
 import org.testng.ITestResult;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
@@ -40,18 +42,25 @@ public class SwagLabLoginPageTest extends SwagPageElements{
 		driver = Browser.openChromeBrowser();
 	}
 	
-	@Test
-	public void validateSwagLogin() throws EncryptedDocumentException, IOException, InterruptedException
+	@DataProvider (name="UserCredentails")
+	public Object[] [] userData()
+	{
+		return new Object[] [] {{"standard_user","secret_sauce"},{"locked_out_user","secret_sauce"},{"problem_user","secret_sauce"}};
+	}
+	
+	@Test (dataProvider = "UserCredentails")
+	public void validateSwagLogin(String userName, String Password) throws EncryptedDocumentException, IOException, InterruptedException
 	{
 		test = reports.createTest("validateSwagLogin");
 		
 		SwagLabLoginPage swagLoginPage = new SwagLabLoginPage(driver);
 		
-		swagLoginPage.enterUserName(Parameterization.getExcelData(0, 0, "Credentails"));
-		swagLoginPage.enterPassword(Parameterization.getExcelData(1, 0, "Credentails"));
+		swagLoginPage.enterUserName(userName);
+		swagLoginPage.enterPassword(Password);
 		Thread.sleep(2000);
 		swagLoginPage.clickOnLogin();
-		
+		String expectedUrl = "https://www.saucedemo.com/inventory.html";
+		Assert.assertEquals(driver.getCurrentUrl(), expectedUrl);
 	}
 	
 	@AfterMethod
