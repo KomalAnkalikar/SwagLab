@@ -6,9 +6,9 @@
       <class name="test.SwagLabProductPageTest">
         <methods>
           <include name="createReport"/>
-          <include name="clickOnCart" invocation-numbers="0"/>
           <include name="flushResults"/>
           <include name="openBrowser"/>
+          <include name="clickOnCancel" invocation-numbers="0"/>
           <include name="captureResults"/>
         </methods>
       </class> <!-- test.SwagLabProductPageTest -->

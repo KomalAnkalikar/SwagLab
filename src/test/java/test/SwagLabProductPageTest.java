@@ -179,6 +179,35 @@ public class SwagLabProductPageTest extends SwagPageElements {
 		
 	}
 	
+	@Test(dataProvider = "UserCredentails")
+	public void clickOnCancel(String userName, String Password) throws InterruptedException
+	{
+		test = reports.createTest("validateSwagProduct");
+		
+		SwagLabProductPage swagProductPage = new SwagLabProductPage(driver);
+		swagProductPage.enterUserName(userName);
+		swagProductPage.enterPassword(Password);
+		Thread.sleep(5000);
+		swagProductPage.clickOnLogin();
+		Thread.sleep(4000);
+		swagProductPage.clickOnaddToCart();
+		swagProductPage.clickshoppingCart();
+		Thread.sleep(5000);
+		swagProductPage.clickOncheckOut();
+		Thread.sleep(4000);
+		swagProductPage.clickOnCancel();
+		Thread.sleep(5000);
+		swagProductPage.clickOncheckOut();
+		Thread.sleep(5000);
+		swagProductPage.enterFirstName("Komal");
+		swagProductPage.enterLastName("kajsak");
+		swagProductPage.enterPostalCode("123567");
+		swagProductPage.clickOnContinue();
+		Thread.sleep(4000);
+		swagProductPage.clickOnFinish();
+		
+	}
+	
 	@AfterMethod
 	  public void captureResults(ITestResult result)
 		{
