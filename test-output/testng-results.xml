@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="1" total="2" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2022-10-25T20:23:28 IST" name="Default suite" finished-at="2022-10-25T20:23:51 IST" duration-ms="23007">
+  <suite started-at="2022-10-26T22:15:12 IST" name="Default suite" finished-at="2022-10-26T22:15:53 IST" duration-ms="41490">
     <groups>
     </groups>
-    <test started-at="2022-10-25T20:23:28 IST" name="Default test" finished-at="2022-10-25T20:23:51 IST" duration-ms="23007">
+    <test started-at="2022-10-26T22:15:12 IST" name="Default test" finished-at="2022-10-26T22:15:53 IST" duration-ms="41490">
       <class name="test.SwagLabProductPageTest">
-        <test-method is-config="true" signature="createReport()[pri:0, instance:test.SwagLabProductPageTest@478190fc]" started-at="2022-10-25T20:23:28 IST" name="createReport" finished-at="2022-10-25T20:23:28 IST" duration-ms="700" status="PASS">
+        <test-method is-config="true" signature="createReport()[pri:0, instance:test.SwagLabProductPageTest@3a93b025]" started-at="2022-10-26T22:15:12 IST" name="createReport" finished-at="2022-10-26T22:15:12 IST" duration-ms="450" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createReport -->
-        <test-method is-config="true" signature="openBrowser()[pri:0, instance:test.SwagLabProductPageTest@478190fc]" started-at="2022-10-25T20:23:29 IST" name="openBrowser" finished-at="2022-10-25T20:23:39 IST" duration-ms="10604" status="PASS">
+        <test-method is-config="true" signature="openBrowser()[pri:0, instance:test.SwagLabProductPageTest@3a93b025]" started-at="2022-10-26T22:15:12 IST" name="openBrowser" finished-at="2022-10-26T22:15:19 IST" duration-ms="6443" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- openBrowser -->
-        <test-method signature="addToCart(java.lang.String,java.lang.String)[pri:0, instance:test.SwagLabProductPageTest@478190fc]" started-at="2022-10-25T20:23:39 IST" name="addToCart" data-provider="UserCredentails" finished-at="2022-10-25T20:23:50 IST" duration-ms="10923" status="PASS">
+        <test-method signature="clickOnContine(java.lang.String,java.lang.String)[pri:0, instance:test.SwagLabProductPageTest@3a93b025]" started-at="2022-10-26T22:15:19 IST" name="clickOnContine" data-provider="UserCredentails" finished-at="2022-10-26T22:15:53 IST" duration-ms="34033" status="PASS">
           <params>
             <param index="0">
               <value>
@@ -30,19 +30,19 @@
           </params>
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- addToCart -->
-        <test-method is-config="true" signature="captureResults(org.testng.ITestResult)[pri:0, instance:test.SwagLabProductPageTest@478190fc]" started-at="2022-10-25T20:23:50 IST" name="captureResults" finished-at="2022-10-25T20:23:50 IST" duration-ms="13" status="PASS">
+        </test-method> <!-- clickOnContine -->
+        <test-method is-config="true" signature="captureResults(org.testng.ITestResult)[pri:0, instance:test.SwagLabProductPageTest@3a93b025]" started-at="2022-10-26T22:15:53 IST" name="captureResults" finished-at="2022-10-26T22:15:53 IST" duration-ms="15" status="PASS">
           <params>
             <param index="0">
               <value>
-                <![CDATA[[TestResult name=addToCart status=SUCCESS method=SwagLabProductPageTest.addToCart(java.lang.String,java.lang.String)[pri:0, instance:test.SwagLabProductPageTest@478190fc] output={null}]]]>
+                <![CDATA[[TestResult name=clickOnContine status=SUCCESS method=SwagLabProductPageTest.clickOnContine(java.lang.String,java.lang.String)[pri:0, instance:test.SwagLabProductPageTest@3a93b025] output={null}]]]>
               </value>
             </param>
           </params>
           <reporter-output>
           </reporter-output>
         </test-method> <!-- captureResults -->
-        <test-method is-config="true" signature="flushResults()[pri:0, instance:test.SwagLabProductPageTest@478190fc]" started-at="2022-10-25T20:23:50 IST" name="flushResults" finished-at="2022-10-25T20:23:51 IST" duration-ms="684" status="PASS">
+        <test-method is-config="true" signature="flushResults()[pri:0, instance:test.SwagLabProductPageTest@3a93b025]" started-at="2022-10-26T22:15:53 IST" name="flushResults" finished-at="2022-10-26T22:15:53 IST" duration-ms="479" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- flushResults -->

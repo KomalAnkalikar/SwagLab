@@ -14,11 +14,13 @@ public class SwagLabProductPage {
 	@FindBy (xpath = "//button[@id='remove-sauce-labs-backpack']")private WebElement remove;
 	@FindBy (xpath = "//a[@class='shopping_cart_link']")private WebElement shoppingCart;
 	@FindBy (xpath = "//button[@id='checkout']")private WebElement checkOut;
+	@FindBy (xpath = "//button[@id='continue-shopping']")private WebElement continueShopping;
 	@FindBy (xpath = "//input[@id='first-name']")private WebElement firstName;
 	@FindBy (xpath = "//input[@id='last-name']")private WebElement lastName;
 	@FindBy (xpath = "//input[@id='postal-code']")private WebElement postalCode;
 	@FindBy (xpath = "//input[@id='continue']")private WebElement continue1;
 	@FindBy (xpath = "//button[@id='finish']")private WebElement finish;
+	@FindBy (xpath = "//button[@id='cancel']")private WebElement cancel;
 	@FindBy (xpath = "//h2[text()=\"THANK YOU FOR YOUR ORDER\"]")private WebElement text;
 	
 	public SwagLabProductPage(WebDriver driver)
@@ -46,6 +48,11 @@ public class SwagLabProductPage {
 		addToCart.click();
 	}
 	
+	public String txtRemove()
+	{
+		return remove.getText();
+	}
+	
 	public void clickOnRemove()
 	{
 		remove.click();
@@ -59,6 +66,11 @@ public class SwagLabProductPage {
 	public void clickOncheckOut()
 	{
 		checkOut.click();
+	}
+	
+	public void clickOncontShopping()
+	{
+		continueShopping.click();
 	}
 	
 	public void enterFirstName(String fname)
@@ -81,6 +93,10 @@ public class SwagLabProductPage {
 		continue1.click();
 	}
 	
+	public void clickOnCancel()
+	{
+		cancel.click();
+	}
 	public void clickOnFinish()
 	{
 		finish.click();

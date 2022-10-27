@@ -62,17 +62,8 @@ public class SwagLabProductPageTest extends SwagPageElements {
 		swagProductPage.clickOnLogin();
 		String expectedUrl = "https://www.saucedemo.com/inventory.html";
 		Assert.assertEquals(driver.getCurrentUrl(), expectedUrl);
-		
-		
-//		swagProductPage.clickshoppingCart();
-//		Thread.sleep(5000);
-//		swagProductPage.clickOncheckOut();
-//		swagProductPage.enterFirstName("Komal");
-//		swagProductPage.enterLastName("kajsak");
-//		swagProductPage.enterPostalCode("123567");
-//		Thread.sleep(5000);
-//		swagProductPage.clickOnContinue();
-//		swagProductPage.clickOnFinish();
+			
+//		
 //		
 //		String expectedText = "THANK YOU FOR YOUR ORDER";
 //		String actualText = swagProductPage.getText();
@@ -83,15 +74,109 @@ public class SwagLabProductPageTest extends SwagPageElements {
 	public void addToCart(String userName, String Password) throws InterruptedException
 	{
 		test = reports.createTest("validateSwagProduct");
+		
 		SwagLabProductPage swagProductPage = new SwagLabProductPage(driver);
 		swagProductPage.enterUserName(userName);
 		swagProductPage.enterPassword(Password);
 		Thread.sleep(5000);
 		swagProductPage.clickOnLogin();
-		String expectedUrl = "https://www.saucedemo.com/inventory.html";
-		Assert.assertEquals(driver.getCurrentUrl(), expectedUrl);
+		Thread.sleep(4000);
 		swagProductPage.clickOnaddToCart();
+		String expectedtxt = "REMOVE";
+		String actualtxt = swagProductPage.txtRemove();
+		Assert.assertEquals(actualtxt, expectedtxt);
 		Thread.sleep(5000);
+		swagProductPage.clickOnRemove();
+	}
+	
+	@Test (dataProvider = "UserCredentails")
+	public void clickOnCart(String userName, String Password) throws InterruptedException
+	{
+		test = reports.createTest("validateSwagProduct");
+		
+		SwagLabProductPage swagProductPage = new SwagLabProductPage(driver);
+		swagProductPage.enterUserName(userName);
+		swagProductPage.enterPassword(Password);
+		Thread.sleep(5000);
+		swagProductPage.clickOnLogin();
+		Thread.sleep(4000);
+		swagProductPage.clickOnaddToCart();
+		swagProductPage.clickshoppingCart();
+		Thread.sleep(5000);
+		swagProductPage.clickOnRemove();
+		swagProductPage.clickOncontShopping();
+		Thread.sleep(5000);
+		swagProductPage.clickOnaddToCart();
+		swagProductPage.clickshoppingCart();
+		Thread.sleep(5000);
+		swagProductPage.clickOncheckOut();
+		
+
+	}
+	
+	@Test(dataProvider = "UserCredentails")
+	public void clickOnContine(String userName, String Password) throws InterruptedException
+	{
+		test = reports.createTest("validateSwagProduct");
+		
+		SwagLabProductPage swagProductPage = new SwagLabProductPage(driver);
+		swagProductPage.enterUserName(userName);
+		swagProductPage.enterPassword(Password);
+		Thread.sleep(5000);
+		swagProductPage.clickOnLogin();
+		Thread.sleep(4000);
+		swagProductPage.clickOnaddToCart();
+		swagProductPage.clickshoppingCart();
+		Thread.sleep(5000);
+		swagProductPage.clickOnRemove();
+		swagProductPage.clickOncontShopping();
+		Thread.sleep(5000);
+		swagProductPage.clickOnaddToCart();
+		swagProductPage.clickshoppingCart();
+		Thread.sleep(5000);
+		swagProductPage.clickOncheckOut();
+		swagProductPage.clickOnCancel();
+		Thread.sleep(3000);
+		swagProductPage.clickOncheckOut();
+		swagProductPage.enterFirstName("Komal");
+		swagProductPage.enterLastName("kajsak");
+		swagProductPage.enterPostalCode("123567");
+		Thread.sleep(5000);
+		swagProductPage.clickOnContinue();
+		
+	}
+	
+	@Test(dataProvider = "UserCredentails")
+	public void clickOnFinish(String userName, String Password) throws InterruptedException
+	{
+		test = reports.createTest("validateSwagProduct");
+		
+		SwagLabProductPage swagProductPage = new SwagLabProductPage(driver);
+		swagProductPage.enterUserName(userName);
+		swagProductPage.enterPassword(Password);
+		Thread.sleep(5000);
+		swagProductPage.clickOnLogin();
+		Thread.sleep(4000);
+		swagProductPage.clickOnaddToCart();
+		swagProductPage.clickshoppingCart();
+		Thread.sleep(5000);
+		swagProductPage.clickOnRemove();
+		swagProductPage.clickOncontShopping();
+		Thread.sleep(5000);
+		swagProductPage.clickOnaddToCart();
+		swagProductPage.clickshoppingCart();
+		Thread.sleep(5000);
+		swagProductPage.clickOncheckOut();
+		swagProductPage.clickOnCancel();
+		Thread.sleep(3000);
+		swagProductPage.clickOncheckOut();
+		swagProductPage.enterFirstName("Komal");
+		swagProductPage.enterLastName("kajsak");
+		swagProductPage.enterPostalCode("123567");
+		Thread.sleep(5000);
+		swagProductPage.clickOnContinue();
+		swagProductPage.clickOnFinish();
+		
 	}
 	
 	@AfterMethod
